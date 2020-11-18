@@ -10,3 +10,8 @@ gem 'sequel', '>= 5.38'
 
 # Faster SELECTs when using Sequel with pg.
 gem 'sequel_pg', '>= 1.14'
+
+group :development, :test do
+  # A Ruby gem to load environment variables from `.env`.
+  gem 'dotenv'
+end

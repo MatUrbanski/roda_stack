@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    dotenv (2.7.6)
     pg (1.2.3)
     rack (2.2.3)
     roda (3.38.0)
@@ -14,6 +15,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   roda (>= 3.38)
   sequel (>= 5.38)
   sequel_pg (>= 1.14)
