@@ -4,6 +4,7 @@ GEM
     dotenv (2.7.6)
     pg (1.2.3)
     rack (2.2.3)
+    rack-unreloader (1.7.0)
     roda (3.38.0)
       rack
     sequel (5.38.0)
@@ -16,6 +17,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  rack-unreloader
   roda (>= 3.38)
   sequel (>= 5.38)
   sequel_pg (>= 1.14)
