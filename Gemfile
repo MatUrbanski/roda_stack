@@ -17,6 +17,9 @@ gem 'rack-unreloader'
 # Freeze all core ruby classes
 gem 'refrigerator', '>= 1'
 
+# A runtime developer console and IRB alternative with powerful introspection capabilities.
+gem 'pry'
+
 group :development, :test do
   # A Ruby gem to load environment variables from `.env`.
   gem 'dotenv'
