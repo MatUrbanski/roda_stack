@@ -21,7 +21,8 @@ Sequel::Model.plugin :auto_validations
 Sequel::Model.plugin :prepared_statements
 
 # The subclasses plugin keeps track of all subclasses of the current model class.
-# Direct subclasses are available via the subclasses method, and all descendent classes are available via the descendents method.
+# Direct subclasses are available via the subclasses method, and all descendent
+# classes are available via the descendents method.
 Sequel::Model.plugin :subclasses unless ENV['RACK_ENV'] == 'development'
 
 unless defined?(Unreloader)
