@@ -20,3 +20,7 @@ Style/MissingElse:
   Exclude:
     - './config/models.rb'
     - './config/environment_variables.rb'
+
+Style/MethodCallWithArgsParentheses:
+  Exclude:
+    - 'spec/**/*'

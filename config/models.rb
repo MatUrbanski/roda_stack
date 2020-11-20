@@ -27,10 +27,9 @@ Sequel::Model.plugin(:subclasses) unless ENV['RACK_ENV'] == 'development'
 
 Dir['./app/models/**/*.rb'].sort.each { |f| require f }
 
-if ENV['RACK_ENV'] == 'development' || ENV['RACK_ENV'] == 'test'
+if ENV['RACK_ENV'] == 'development'
   require 'logger'
   LOGGER = Logger.new($stdout)
-  LOGGER.level = Logger::FATAL if ENV['RACK_ENV'] == 'test'
   DB.loggers << LOGGER
 end
 
