@@ -11,9 +11,6 @@ gem 'sequel', '>= 5.38'
 # Faster SELECTs when using Sequel with pg.
 gem 'sequel_pg', '>= 1.14'
 
-# Rack Application that reloads application files if changed, unloading constants first.
-gem 'rack-unreloader'
-
 # A runtime developer console and IRB alternative with powerful introspection capabilities.
 gem 'pry'
 

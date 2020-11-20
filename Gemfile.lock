@@ -9,7 +9,6 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     rack (2.2.3)
-    rack-unreloader (1.7.0)
     roda (3.38.0)
       rack
     sequel (5.38.0)
@@ -23,7 +22,6 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   pry
-  rack-unreloader
   roda (>= 3.38)
   sequel (>= 5.38)
   sequel_pg (>= 1.14)
