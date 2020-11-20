@@ -1,0 +1,22 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-thread_safety
+
+AllCops:
+  NewCops: enable
+  EnabledByDefault: true
+  TargetRubyVersion: 2.7.2
+  Exclude:
+    - 'db/schema.rb'
+
+Lint/ConstantResolution:
+  Enabled: false
+
+Style/Copyright:
+  Enabled: false
+
+Style/MissingElse:
+  Exclude:
+    - './config/models.rb'
+    - './config/environment_variables.rb'

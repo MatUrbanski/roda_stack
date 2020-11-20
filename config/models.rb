@@ -15,15 +15,15 @@ Sequel::Model.cache_associations = false if ENV['RACK_ENV'] == 'development'
 # not_null validations on NOT NULL columns (optionally, presence validations)
 # unique validations on columns or sets of columns with unique indexes
 # max length validations on string columns
-Sequel::Model.plugin :auto_validations
+Sequel::Model.plugin(:auto_validations)
 
 # The prepared_statements plugin modifies the model to use prepared statements for instance level inserts and updates.
-Sequel::Model.plugin :prepared_statements
+Sequel::Model.plugin(:prepared_statements)
 
 # The subclasses plugin keeps track of all subclasses of the current model class.
 # Direct subclasses are available via the subclasses method, and all descendent
 # classes are available via the descendents method.
-Sequel::Model.plugin :subclasses unless ENV['RACK_ENV'] == 'development'
+Sequel::Model.plugin(:subclasses) unless ENV['RACK_ENV'] == 'development'
 
 Dir['./app/models/**/*.rb'].sort.each { |f| require f }
 

@@ -11,10 +11,25 @@ gem 'sequel', '>= 5.38'
 # Faster SELECTs when using Sequel with pg.
 gem 'sequel_pg', '>= 1.14'
 
+# Rack Application that reloads application files if changed, unloading constants first.
+gem 'rack-unreloader'
+
 # A runtime developer console and IRB alternative with powerful introspection capabilities.
 gem 'pry'
 
 group :development, :test do
   # A Ruby gem to load environment variables from `.env`.
   gem 'dotenv'
+
+  # A Ruby static code analyzer and formatter, based on the community Ruby style guide.
+  gem 'rubocop'
+
+  # An extension of RuboCop focused on code performance checks.
+  gem 'rubocop-performance'
+
+  # Code style checking for RSpec files.
+  gem 'rubocop-rspec'
+
+  # Thread-safety analysis for your projects.
+  gem 'rubocop-thread_safety'
 end

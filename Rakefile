@@ -3,14 +3,15 @@
 require_relative './config/database'
 require 'logger'
 
-migrate = lambda do |version|
-  Sequel.extension :migration
-  DB.loggers << Logger.new($stdout) if DB.loggers.empty?
-  Sequel::Migrator.apply(DB, 'db/migrate', version)
+migrate =
+  lambda do |version|
+    Sequel.extension(:migration)
+    DB.loggers << Logger.new($stdout) if DB.loggers.empty?
+    Sequel::Migrator.apply(DB, 'db/migrate', version)
 
-  # Dump database schema after migration.
-  Rake::Task['db:dump'].invoke
-end
+    # Dump database schema after migration.
+    Rake::Task['db:dump'].invoke
+  end
 
 namespace :db do
   desc 'migrate up'
@@ -20,7 +21,7 @@ namespace :db do
 
   desc 'migrate all the way to 0'
   task :down, [:version] do |_, args|
-    version = (args[:version] || 0).to_i
+    version = Integer((args[:version] || 0), 10)
     migrate.call(version)
   end
 
