@@ -14,7 +14,7 @@ ENV['RACK_ENV'] = 'test'
 DB.loggers = []
 
 # Require all files in spec/support folder.
-root_path = Pathname.new(File.expand_path('../..', __FILE__))
+root_path = Pathname.new(File.expand_path('..', __dir__))
 Dir[root_path.join('spec/support/*.rb')].sort.each { |f| require f }
 
 RSpec.configure do |config|

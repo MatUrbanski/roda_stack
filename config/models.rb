@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# This file contains configuration for Sequel Models.
+
 require_relative 'database'
 require 'sequel/model'
 

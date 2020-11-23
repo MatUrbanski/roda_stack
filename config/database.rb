@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# This file contain code to setup the database connection.
+
 require_relative './environment_variables'
 require 'sequel/core'
 
