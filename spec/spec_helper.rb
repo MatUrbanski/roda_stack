@@ -27,6 +27,7 @@ RSpec.configure do |config|
     end
   end)
 
+  # Configuration for database cleaning strategy using DatabaseCleaner.
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
