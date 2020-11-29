@@ -27,15 +27,8 @@ RSpec.configure do |config|
     end
   end)
 
-  # Configuration for database cleaning strategy using DatabaseCleaner.
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
+  # Configuration for database cleaning strategy using Sequel.
   config.around do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+    DB.transaction(rollback: :always, auto_savepoint: true) { example.run }
   end
 end

@@ -36,9 +36,6 @@ group :development, :test do
   # RSpec meta-gem that depends on the other components.
   gem 'rspec'
 
-  # Strategies for cleaning databases in Ruby. Can be used to ensure a clean state for testing.
-  gem 'database_cleaner'
-
   # Rack::Test is a layer on top of Rack's MockRequest similar to Merb's RequestHelper.
   gem 'rack-test'
 end
