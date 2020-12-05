@@ -5,7 +5,6 @@
 # The ruby bin/console let's you interact with your application from the command line.
 
 require 'pry'
-require_relative '../config/models'
-require_relative '../config/i18n'
+require_relative '../config/boot'
 
 Pry.start

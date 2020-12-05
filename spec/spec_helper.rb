@@ -1,17 +1,12 @@
 # frozen_string_literal: true
 
-require 'rake'
-require 'database_cleaner'
-require 'rack/test'
-
-require_relative '../config/models'
-require_relative '../app'
-
 # Set RACK_ENV to test.
 ENV['RACK_ENV'] = 'test'
 
-# Disable database logs during test launch.
-DB.loggers = []
+require 'rack/test'
+
+require_relative '../config/boot'
+require_relative '../app'
 
 # Require all files in spec/support folder.
 root_path = Pathname.new(File.expand_path('..', __dir__))

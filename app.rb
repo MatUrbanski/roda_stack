@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative './config/models'
-require_relative './config/i18n'
 require 'roda'
+
+require_relative './config/boot'
 
 # The main class for Roda Application.
 class App < Roda

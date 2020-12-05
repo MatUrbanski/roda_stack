@@ -27,14 +27,17 @@ Sequel::Model.plugin(:prepared_statements)
 # classes are available via the descendents method.
 Sequel::Model.plugin(:subclasses) unless ENV['RACK_ENV'] == 'development'
 
+# Require all models in app/models folder.
 Dir['./app/models/**/*.rb'].sort.each { |f| require f }
 
-if ENV['RACK_ENV'] == 'development'
+# Do not log database statements in test environment.
+unless ENV['RACK_ENV'] == 'test'
   require 'logger'
   LOGGER = Logger.new($stdout)
   DB.loggers << LOGGER
 end
 
+# Freeze Sequel::Model and DB classes when environment is not development.
 unless ENV['RACK_ENV'] == 'development'
   # Freeze all descendent classes. This also finalizes the associations for those classes before freezing.
   Sequel::Model.freeze_descendents

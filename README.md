@@ -9,6 +9,7 @@ This boilerplate includes the things I need most when starting a new project.
 - bin/console (like `rails console`)
 - RSpec setup
 - I18n setup
+- Continuous integration with Github Actions
 
 # Setup Database
 
