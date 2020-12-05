@@ -17,6 +17,9 @@ gem 'rack-unreloader'
 # A runtime developer console and IRB alternative with powerful introspection capabilities.
 gem 'pry'
 
+# Ruby internationalization and localization (i18n) solution.
+gem 'i18n'
+
 group :development, :test do
   # A Ruby gem to load environment variables from `.env`.
   gem 'dotenv'

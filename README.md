@@ -8,6 +8,7 @@ This boilerplate includes the things I need most when starting a new project.
 - DB + Model setup
 - bin/console (like `rails console`)
 - RSpec setup
+- I18n setup
 
 # Setup Database
 
