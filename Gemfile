@@ -23,6 +23,9 @@ gem 'i18n'
 # Coercion and validation for data structures.
 gem 'dry-schema'
 
+# YARD is a Ruby Documentation tool. The Y stands for "Yay!"
+gem 'yard'
+
 group :development, :test do
   # A Ruby gem to load environment variables from `.env`.
   gem 'dotenv'
