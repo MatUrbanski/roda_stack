@@ -10,6 +10,8 @@ This boilerplate includes the things I need most when starting a new project.
 - RSpec setup
 - I18n setup
 - Continuous integration with Github Actions
+- Params validation with `dry-schema`
+- Documentation using `yard`.
 
 # Setup Database
 
