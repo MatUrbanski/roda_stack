@@ -1,2 +1,3 @@
 en:
   test: "This is a test"
+  invalid_parameters: 'Your query contains incorrectly formed parameters.'

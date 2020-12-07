@@ -20,6 +20,9 @@ gem 'pry'
 # Ruby internationalization and localization (i18n) solution.
 gem 'i18n'
 
+# Coercion and validation for data structures.
+gem 'dry-schema'
+
 group :development, :test do
   # A Ruby gem to load environment variables from `.env`.
   gem 'dotenv'

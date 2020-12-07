@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# This contains setup for Ruby internationalization and localization (i18n).
+# This file contains setup for Ruby internationalization and localization (i18n).
 
 require 'i18n'
 
