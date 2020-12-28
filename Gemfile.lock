@@ -94,7 +94,7 @@ GEM
       pg (>= 0.18.0, != 1.2.0)
       sequel (>= 4.38.0)
     unicode-display_width (1.7.0)
-    yard (0.9.25)
+    yard (0.9.26)
 
 PLATFORMS
   ruby
