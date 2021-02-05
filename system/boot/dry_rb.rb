@@ -2,4 +2,8 @@
 
 # This file contains configuration for dry-rb toolset.
 
-require 'dry-schema'
+Application.boot(:dry_rb) do
+  init do
+    require 'dry-validation'
+  end
+end

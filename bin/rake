@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+# This file contains configuration for running Rake tasks.
+
+require 'rake'
+
+Rake.application.run

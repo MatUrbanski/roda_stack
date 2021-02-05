@@ -1,0 +1,8 @@
+{
+  "name": "e-lessons-api",
+  "private": true,
+  "dependencies": {
+    "mjml": "^4.6.3"
+  },
+  "version": "0.1.0"
+}

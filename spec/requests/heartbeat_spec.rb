@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'GET /heartbeat', type: :request do
+describe 'GET /heartbeat', type: :request do
   before { get('/heartbeat') }
 
   it 'returns 200 HTTP status' do

@@ -2,19 +2,24 @@
 
 # Rakefile contains all the application-related tasks.
 
-require_relative './config/database'
-require 'logger'
+require_relative './system/container'
+
+# Enable database component.
+Application.start(:database)
+
+# Enable logger componnent.
+Application.start(:logger)
+
+# Add exsiting Logger instance to DB.loggers collection.
+Application['database'].loggers << Application['logger']
 
 migrate =
   lambda do |version|
     # Enable Sequel migration extension.
     Sequel.extension(:migration)
 
-    # Enable Database logger to see logs during migration launch.
-    DB.loggers << Logger.new($stdout) if DB.loggers.empty?
-
     # Perform migrations based on migration files in a specified directory.
-    Sequel::Migrator.apply(DB, 'db/migrate', version)
+    Sequel::Migrator.apply(Application['database'], 'db/migrate', version)
 
     # Dump database schema after migration.
     Rake::Task['db:dump'].invoke
@@ -34,13 +39,24 @@ namespace :db do
 
   desc 'Rolling back latest migration.'
   task :rollback do |_, _args|
-    current_version = DB.fetch('SELECT * FROM schema_info').first[:version]
+    current_version = Application['database'].fetch('SELECT * FROM schema_info').first[:version]
     migrate.call(current_version - 1)
   end
 
   desc 'Dump database schema to file.'
   task :dump do
     # Dump database schema only in development environment.
-    sh %(sequel -D #{DB.url} > db/schema.rb) if ENV['RACK_ENV'] == 'development'
+    development = Application.env == 'development'
+    sh %(pg_dump --schema-only --no-privileges --no-owner -s #{Application['database'].url} > db/structure.sql) if development
   end
+
+  desc 'Seed database with test data.'
+  task :seed do
+    sh %(ruby db/seeds.rb)
+  end
+end
+
+desc 'Generate project documentation using yard.'
+task :docs do
+  sh %(yard doc *.rb app/ lib/)
 end

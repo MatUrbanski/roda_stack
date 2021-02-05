@@ -2,7 +2,6 @@
 
 # This file contains configuration to let the webserver which application to run.
 
-require_relative './config/models'
 require_relative 'app'
 
 run App.freeze.app

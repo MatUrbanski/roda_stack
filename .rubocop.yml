@@ -6,7 +6,7 @@ require:
 AllCops:
   NewCops: enable
   EnabledByDefault: true
-  TargetRubyVersion: 2.7.2
+  TargetRubyVersion: 3.0.0
   Exclude:
     - 'db/schema.rb'
     - vendor/bundle/**/*
@@ -18,10 +18,67 @@ Style/Copyright:
   Enabled: false
 
 Style/MissingElse:
-  Exclude:
-    - './config/models.rb'
-    - './config/environment_variables.rb'
+  Enabled: false
 
 Style/MethodCallWithArgsParentheses:
   Exclude:
     - 'spec/**/*'
+
+Style/StringHashKeys:
+  Exclude:
+    - app.rb
+    - spec/**/*
+
+RSpec/NestedGroups:
+  Max: 5
+
+Layout/LineLength:
+  Max: 125
+  IgnoredPatterns: ['(\A|\s)#']
+
+Layout/SpaceBeforeBrackets:
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/BlockLength:
+  Max: 40
+  Exclude:
+    - 'spec/**/*'
+    - 'app.rb'
+
+Lint/ToJSON:
+  Exclude:
+    - app/serializers/**/*
+
+RSpec/ExpectInHook:
+  Enabled: false
+
+RSpec/MessageExpectation:
+  Enabled: false
+
+RSpec/StubbedMock:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 15
+
+Naming/VariableNumber:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
